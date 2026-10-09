@@ -1,0 +1,3 @@
+export default function HindiInputGuide(){
+ return <details className="learning-hindi-guide"><summary>Practicing in Hindi? Set up your input first</summary><div><p>Enable a Hindi (Devanagari) keyboard in your operating system, then choose the layout you already use, such as InScript or a phonetic input method. Switch to Hindi before starting the lesson and test a few characters in a text field.</p><p>StenoFlow reads Unicode Devanagari text. It does not convert legacy font encodings or change your device’s keyboard layout.</p><div lang="hi">Try typing: भारत सरकार समय अभ्यास</div></div></details>;
+}

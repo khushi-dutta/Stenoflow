@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export function Brand({light=false}:{light?:boolean}){return <Link href="/" className={`brand ${light?'brand-light':''}`} aria-label="StenoFlow home"><span className="brand-symbol" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none"><path d="M6 19 12 7M12 21 18 7M18 21l4-9" stroke={light?'#315b46':'#fffef9'} strokeWidth="2.4" strokeLinecap="round"/></svg></span><span>steno<span className="brand-weight">flow</span></span></Link>;}

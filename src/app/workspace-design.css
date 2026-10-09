@@ -1,0 +1,241 @@
+/* Workspace layer: quiet surfaces, readable type, and consistent controls. */
+.app-theme {
+  --bg: #f4f3ee;
+  --surface: #fffefa;
+  --ink: #202721;
+  --muted: #687166;
+  --border: #d8dcd2;
+  --primary: #315b46;
+  --primary-soft: #e9eee5;
+  --green: #315b46;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.app-theme.dark {
+  --bg: #171d19;
+  --surface: #202821;
+  --ink: #edf0e6;
+  --muted: #b1bbac;
+  --border: #394438;
+  --primary: #afccb0;
+  --primary-soft: #303e31;
+  --green: #afccb0;
+}
+.app-theme :is(button,a,input,textarea,select):focus-visible { outline-color: var(--primary); }
+.app-theme a:hover, .app-theme button:hover { opacity: 1; }
+.app-theme .btn { min-height: 42px; border-radius: 5px; padding: 10px 16px; font-size: 13px; font-weight: 600; }
+.app-theme :is(.btn-primary,.learning-primary,.practice-primary) { background: #315b46; color: #fff; }
+.app-theme :is(.btn-primary,.learning-primary,.practice-primary):hover { background: #254735; }
+.app-theme :is(.btn-outline,.learning-secondary,.practice-secondary):hover { background: var(--primary-soft); border-color: var(--primary); }
+.app-theme :is(input,select,textarea) { border-radius: 5px; font-size: 14px; }
+.app-theme .eyebrow { font-size: 10px; letter-spacing: 1.65px; color: var(--muted); }
+
+/* Navigation uses a single accent; the active page reads before the icon. */
+.app-theme .app-sidebar { width: 240px; padding: 28px 20px 20px; background: var(--bg); }
+.app-theme .app-sidebar .brand { margin: 0 10px 24px; }
+.app-theme .sidebar-nav { scrollbar-width: thin; padding-right: 2px; }
+.app-theme .nav-section-label { font-size: 10px; letter-spacing: 1.2px; margin: 23px 12px 9px; font-weight: 600; }
+.app-theme .nav-item { min-height: 39px; padding: 9px 12px; border-radius: 4px; font-size: 13px; gap: 11px; margin: 2px 0; color: var(--muted); }
+.app-theme .nav-item svg { width: 17px; height: 17px; stroke-width: 1.65; flex-shrink: 0; }
+.app-theme .nav-item:hover { background: var(--primary-soft); color: var(--ink); }
+.app-theme .nav-item.active { background: var(--primary-soft); color: var(--primary); font-weight: 650; box-shadow: inset 2px 0 var(--primary); }
+.app-theme .sidebar-bottom { padding-top: 20px; }
+.app-theme .sidebar-upgrade { background: transparent; padding: 17px 12px; border-width: 1px 0 0; border-radius: 0; }
+.app-theme .sidebar-upgrade>svg { display: none; }
+.app-theme .sidebar-upgrade h4 { font-size: 13px; font-weight: 600; line-height: 1.5; }
+.app-theme .sidebar-upgrade p { font-size: 12px; margin-bottom: 12px; }
+.app-theme .sidebar-upgrade .btn { font-size: 12px; min-height: 37px; background: transparent; color: var(--primary); border: 1px solid var(--border); justify-content: space-between; }
+.app-theme .sidebar-user { padding: 17px 10px 0; border-top: 1px solid var(--border); gap: 10px; }
+.app-theme .sidebar-user strong { font-size: 13px; }
+.app-theme .sidebar-user small { font-size: 11px; }
+.app-theme .avatar { width: 34px; height: 34px; font-size: 13px; border: 1px solid var(--border); }
+.app-theme .app-main { margin-left: 240px; }
+.app-theme .app-topbar { height: 76px; padding: 0 40px; background: var(--bg); }
+.app-theme .breadcrumb { font-size: 12px; }
+.app-theme .breadcrumb strong { font-weight: 500; }
+.app-theme .search-trigger { font-size: 12px; }
+.app-theme .search-trigger kbd { font-size: 10px; padding: 3px 5px; margin-left: 20px; }
+.app-theme .icon-button { width: 36px; height: 36px; border-radius: 5px; }
+.app-theme .icon-button:hover { background: var(--primary-soft); color: var(--primary); }
+.app-theme .app-content { max-width: 1490px; padding: 40px 40px 48px; }
+.app-theme .page-heading { margin-bottom: 30px; align-items: flex-end; }
+.app-theme .page-heading h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(30px,2.7vw,40px); font-weight: 400; letter-spacing: -1.1px; line-height: 1.2; margin: 10px 0; }
+.app-theme .page-heading p { font-size: 13px; max-width: 560px; line-height: 1.7; }
+.app-theme .page-heading-actions { flex-shrink: 0; }
+.app-theme .welcome-banner { padding: 17px 20px; background: var(--primary-soft); border-color: var(--border); border-radius: 5px; margin-bottom: 25px; }
+.app-theme .welcome-banner strong { font-size: 13px; font-weight: 600; }
+.app-theme .welcome-banner p, .app-theme .welcome-banner a { font-size: 12px; }
+.app-theme .welcome-banner a { white-space: nowrap; margin-left: 20px; }
+
+/* The dashboard is a working desk rather than a stack of promotional tiles. */
+.app-theme .stats-grid { gap: 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: var(--surface); margin-bottom: 28px; }
+.app-theme .stat-card { border: 0; border-right: 1px solid var(--border); border-radius: 0; background: transparent; padding: 23px 24px; }
+.app-theme .stat-card:last-child { border-right: 0; }
+.app-theme .stat-label { font-size: 12px; margin-bottom: 16px; }
+.app-theme .stat-label svg { color: var(--muted); stroke-width: 1.6; }
+.app-theme .stat-number { font-size: 35px; font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -1.2px; line-height: 1.2; }
+.app-theme .stat-number small { font-size: 12px; margin-left: 6px; letter-spacing: 0; }
+.app-theme .stat-foot { font-size: 11px; margin-top: 9px; }
+.app-theme .dashboard-grid { grid-template-columns: minmax(0,1fr) 300px; gap: 24px; }
+.app-theme .panel { padding: 24px; border-radius: 6px; box-shadow: none; }
+.app-theme .panel-title { margin-bottom: 23px; align-items: flex-start; }
+.app-theme .panel-title h2 { font-size: 16px; font-weight: 600; letter-spacing: -.3px; line-height: 1.4; }
+.app-theme .panel-title p { font-size: 12px; line-height: 1.6; margin-top: 6px; }
+.app-theme .panel-title a { font-size: 12px; white-space: nowrap; display: inline-flex; align-items: center; gap: 3px; padding-top: 2px; }
+.app-theme .chart-panel { min-height: 310px; }
+.app-theme .chart-area { height: 222px; }
+.app-theme .chart-empty { height: 222px; border-radius: 0; }
+.app-theme .chart-empty span { border-radius: 50%; width: 42px; height: 42px; }
+.app-theme .chart-empty h3 { font-size: 15px; font-weight: 500; }
+.app-theme .chart-empty p, .app-theme .chart-empty a { font-size: 12px; }
+.app-theme .chart-empty p { max-width: 290px; }
+.app-theme .section-spaced { margin-top: 24px; }
+.app-theme .dictation-mini { gap: 14px; padding: 17px 0; }
+.app-theme .dictation-mini:last-child { padding-bottom: 0; }
+.app-theme .dictation-mini h3 { font-size: 14px; font-weight: 500; line-height: 1.5; }
+.app-theme .dictation-mini p { font-size: 11px; }
+.app-theme .dictation-mini .btn { min-height: 35px; font-size: 11px; padding: 7px 11px; }
+.app-theme .dictation-icon { width: 40px; height: 43px; border-radius: 4px; background: var(--bg); border: 1px solid var(--border); }
+.app-theme .quick-practice { background: #263e30; color: #fff; border-color: #263e30; padding: 27px; }
+.app-theme .quick-practice .eyebrow { color: #bfd0b9; font-size: 10px; }
+.app-theme .quick-practice h2 { font-family: Georgia, serif; font-size: 30px; font-weight: 400; line-height: 1.2; margin: 19px 0 14px; letter-spacing: -.6px; }
+.app-theme .quick-practice h2 em { color: #d1dfbd; }
+.app-theme .quick-practice p { font-size: 13px; color: #d0d9cd; line-height: 1.7; }
+.app-theme .quick-wave { border-block: 1px solid #ffffff20; height: 52px; margin: 23px 0 16px; justify-content: space-between; gap: 3px; }
+.app-theme .quick-wave i { background: #a8bd9a; width: 2px; border-radius: 0; }
+.app-theme .quick-practice-meta { font-size: 11px; color: #d0d9cd; flex-wrap: wrap; gap: 8px 15px; }
+.app-theme .quick-practice .btn { color: #263e30; background: #f1f2e9; margin: 23px 0 0; }
+.app-theme .goal-ring { margin: 23px auto; }
+.app-theme .goal-ring strong { font-size: 27px; font-weight: 500; }
+.app-theme .goal-ring small, .app-theme .goal-summary small { font-size: 11px; }
+.app-theme .goal-summary strong { font-size: 16px; font-weight: 500; }
+.app-theme .activity-strip { gap: 5px; margin-bottom: 15px; }
+.app-theme .activity-cell { width: 13px; height: 13px; border-radius: 2px; }
+.app-theme .activity-cell.active { background: var(--primary); }
+.app-theme .activity-legend { font-size: 11px; }
+.app-theme .coach-tip { padding: 0; background: none; gap: 12px; }
+.app-theme .coach-tip>svg { flex-shrink: 0; color: var(--primary); margin-top: 2px; }
+.app-theme .coach-tip strong { font-size: 13px; }
+.app-theme .coach-tip p { font-size: 12px; line-height: 1.7; }
+.app-theme .practice-categories { gap: 12px; }
+.app-theme .category-link { padding: 18px 14px; gap: 10px; border-radius: 5px; }
+.app-theme .category-link:hover { border-color: var(--primary); background: var(--primary-soft); }
+.app-theme .category-link h3 { font-size: 13px; font-weight: 500; }
+.app-theme .category-link p { font-size: 11px; line-height: 1.5; }
+.app-theme .category-link>svg { flex-shrink: 0; }
+.app-theme .readiness-total span, .app-theme .readiness-bars>div>div { font-size: 11px; }
+.app-theme .readiness-note { font-size: 11px!important; line-height: 1.7; }
+.app-theme .readiness-panel .text-link { font-size: 12px; }
+.app-theme .app-footer { font-size: 11px; padding-top: 20px; margin-top: 36px; border-top: 1px solid var(--border); }
+
+/* Shared catalog and learning surfaces. */
+.app-theme :is(.library-card,.learning-card,.learning-panel,.learning-empty,.learning-flashcard) { border-radius: 6px; box-shadow: none; }
+.app-theme .library-grid, .app-theme .learning-grid { gap: 20px; }
+.app-theme .library-card h2 { font-size: 18px; font-weight: 500; line-height: 1.4; }
+.app-theme .library-card>p { font-size: 13px; line-height: 1.7; }
+.app-theme .library-meta { font-size: 11px; flex-wrap: wrap; }
+.app-theme .library-card-bottom .btn { font-size: 12px; }
+.app-theme .pill { font-size: 10px; padding: 5px 8px; border-radius: 3px; }
+.app-theme .learning-header { margin-bottom: 32px; }
+.app-theme .learning-header h1 { font-family: Georgia,serif; font-weight: 400; font-size: 36px; letter-spacing: -.8px; margin: 10px 0; }
+.app-theme .learning-header p { font-size: 14px; line-height: 1.7; }
+.app-theme .learning-eyebrow { font-size: 10px; letter-spacing: 1.5px; }
+.app-theme .learning-banner { background: #263e30; border-radius: 6px; padding: 30px; }
+.app-theme .learning-banner h2 { font-family: Georgia,serif; font-size: 28px; font-weight: 400; }
+.app-theme .learning-banner p { color: #d0d9cd; font-size: 13px; }
+.app-theme .learning-banner :is(.learning-eyebrow,.learning-banner-icon) { color: #bfd0b9; }
+.app-theme :is(.learning-card,.learning-panel) { padding: 24px; }
+.app-theme :is(.learning-card,.learning-panel) h2 { font-size: 18px; font-weight: 500; line-height: 1.4; }
+.app-theme :is(.learning-card,.learning-panel) p { font-size: 13px; line-height: 1.75; }
+.app-theme :is(.learning-meta,.learning-tag,.learning-field-note,.learning-plan-meta span) { font-size: 11px; }
+.app-theme .learning-number { color: var(--muted); font-size: 12px; }
+.app-theme :is(.learning-primary,.learning-secondary) { border-radius: 5px; font-size: 12px; min-height: 40px; padding: 10px 14px; }
+.app-theme .learning-tabs { border-radius: 5px; }
+.app-theme .learning-tabs button { font-size: 12px; padding: 9px 14px; border-radius: 3px; }
+.app-theme :is(.learning-toolbar,.learning-notice p,.learning-empty p,.learning-inline-label,.learning-resource-check,.learning-upload,.learning-folder-row,.learning-saved-row) { font-size: 13px; }
+.app-theme .learning-resource-cover { background: #e5e9dc; color: #31513b; border-radius: 4px; border: 1px solid #d0d7c5; font-size: 11px; padding: 20px; }
+.app-theme.dark .learning-resource-cover { background: #354432; color: #deebd5; border-color: var(--border); }
+.app-theme :is(.learning-form label,.learning-stats span,.learning-saved-row span,.learning-pager,.learning-resource-toolbar select) { font-size: 12px; }
+.app-theme :is(.learning-form input,.learning-form select,.learning-form textarea,.learning-inline-form input,.learning-resource-search input) { font-size: 14px; }
+.app-theme .learning-table-wrap table, .app-theme .history-table { font-size: 13px; }
+.app-theme .learning-table-wrap th, .app-theme .history-table th { font-size: 11px; letter-spacing: .4px; }
+.app-theme .learning-stats>div { border-radius: 5px; padding: 22px; }
+.app-theme .learning-stats strong { font-weight: 500; font-size: 30px; }
+.app-theme .empty-state p { font-size: 13px; }
+.app-theme .notice-bar { font-size: 13px; }
+
+/* Practice retains generous text space with instrument-like timing controls. */
+.app-theme .practice-heading h1 { font-family: Georgia,serif; font-size: 34px; font-weight: 400; line-height: 1.25; }
+.app-theme .practice-heading p { font-size: 14px; }
+.app-theme :is(.practice-session-bar,.practice-card,.practice-audio-wrap,.practice-settings,.practice-exam-guide,.practice-language-guide) { border-radius: 6px; }
+.app-theme .practice-timer span, .app-theme .practice-metric>span { font-size: 10px; }
+.app-theme :is(.practice-card-heading,.practice-editor-top) { font-size: 11px; }
+.app-theme .practice-source { background: var(--bg); }
+.app-theme .practice-timer strong { font-size: 28px; }
+.app-theme :is(.practice-bottom p,.practice-fineprint,.practice-audio label,.practice-audio-upload,.practice-editor-bottom) { font-size: 12px; }
+.app-theme .practice-primary, .app-theme .practice-secondary { border-radius: 5px; font-size: 13px!important; }
+.app-theme .practice-result-stats>div { border-radius: 5px; }
+.app-theme .practice-audio>div>span { font-size: 12px; }
+.app-theme .command-dialog { border-radius: 7px; padding: 22px; box-shadow: 0 18px 70px #15251a30; }
+.app-theme .command-dialog h2 { font-size: 19px; font-weight: 500; }
+.app-theme .command-results a { font-size: 14px; }
+.app-theme .command-results span { font-size: 11px; }
+
+@media (max-width: 1240px) {
+  .app-theme .app-content { padding: 32px 28px; }
+  .app-theme .app-topbar { padding-inline: 28px; }
+  .app-theme .dashboard-grid { grid-template-columns: minmax(0,1fr); }
+  .app-theme .dashboard-side { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+  .app-theme .dashboard-side .section-spaced { margin-top: 0; }
+  .app-theme .page-heading { align-items: flex-start; flex-wrap: wrap; gap: 20px; }
+  .app-theme .stat-card { padding: 20px; }
+}
+@media (max-width: 900px) {
+  .app-theme .app-sidebar { width: 215px; padding-inline: 13px; }
+  .app-theme .app-main { margin-left: 215px; }
+  .app-theme .app-content { padding: 30px 22px; }
+  .app-theme .stats-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .app-theme .stat-card:nth-child(2) { border-right: 0; }
+  .app-theme .stat-card:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .app-theme .practice-categories { grid-template-columns: 1fr; }
+  .app-theme .panel-title { flex-wrap: wrap; gap: 12px; }
+}
+@media (max-width: 650px) {
+  .app-theme .app-sidebar { width: 260px; padding: 24px 20px; }
+  .app-theme .app-main { margin-left: 0; }
+  .app-theme .app-topbar { height: 64px; padding-inline: 16px; }
+  .app-theme .app-content { padding: 28px 18px 100px; }
+  .app-theme .page-heading h1, .app-theme .learning-header h1 { font-size: 31px; }
+  .app-theme .page-heading p { font-size: 13px; }
+  .app-theme .page-heading-actions .btn { font-size: 12px; padding: 10px 15px; }
+  .app-theme .page-heading-actions .btn-outline { display: inline-flex; }
+  .app-theme .welcome-banner { align-items: flex-start; flex-direction: column; gap: 12px; padding: 17px; }
+  .app-theme .welcome-banner a { margin-left: 33px; }
+  .app-theme .welcome-banner p { font-size: 12px; }
+  .app-theme .stat-card { padding: 19px 16px; }
+  .app-theme .stat-label { font-size: 11px; gap: 7px; }
+  .app-theme .stat-number { font-size: 30px; }
+  .app-theme .stat-foot { font-size: 10px; }
+  .app-theme .panel { padding: 20px; }
+  .app-theme .dashboard-side { grid-template-columns: 1fr; }
+  .app-theme .dictation-mini { gap: 10px; flex-wrap: wrap; }
+  .app-theme .dictation-mini>div { flex: 1; min-width: 150px; }
+  .app-theme .dictation-mini h3 { font-size: 13px; }
+  .app-theme .dictation-mini .btn { margin-left: 50px; }
+  .app-theme .learning-card, .app-theme .learning-panel { padding: 21px; }
+  .app-theme .practice-heading h1 { font-size: 28px; }
+  .app-theme .practice-heading { flex-wrap: wrap; }
+  .app-theme .learning-stats>div { padding: 14px; }
+  .app-theme .learning-stats strong { font-size: 25px; }
+  .app-theme .mobile-bottom-nav { padding-top: 12px; padding-bottom: max(12px,env(safe-area-inset-bottom)); }
+  .app-theme .mobile-bottom-nav a { font-size: 10px; gap: 5px; }
+  .app-theme .mobile-bottom-nav a.active { font-weight: 650; }
+  .app-theme .app-footer { font-size: 10px; flex-wrap: wrap; gap: 6px; }
+}
+/* Contrast refinements for controls and account actions. */
+.app-theme.dark .practice-audio-play,.app-theme.dark .practice-tools button.active{color:#203528}
+.app-theme .practice-card textarea::placeholder{opacity:.85}
+.app-theme .account-link,.app-theme .account-email{font-size:12px}
+.app-theme .account-popover>a,.app-theme .account-popover>button{font-size:13px;padding:11px}
+.app-theme .account-popover>span{font-size:11px}
+@media(max-width:650px){.app-theme .account-link{font-size:10px}}

@@ -1,0 +1,2 @@
+import type {MetadataRoute} from 'next';
+export default function sitemap():MetadataRoute.Sitemap{const base=process.env.NEXT_PUBLIC_SITE_URL||'http://localhost:3000';return ['','about','pricing','privacy','terms','refunds','contact','guides/ssc-stenographer-practice','guides/ssc-steno-dictations','guides/hindi-stenography','guides/english-typing-practice','guides/government-typing-tests','guides/high-court-typing-tests','guides/cpct-typing-practice','guides/stenography-mock-tests'].map(path=>({url:`${base}/${path}`,lastModified:new Date(),changeFrequency:'monthly'}))}

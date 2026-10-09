@@ -1,0 +1,9 @@
+# Keyboard courses
+
+The four typing courses live at `/app/typing?layout=en_qwerty`, `hi_inscript`, `hi_remington`, and `hi_krutidev`. Each has 18 original lessons across foundation, words, sentences, and timed passages. A completed lesson requires at least 95% passage coverage plus its accuracy and speed targets. Attempts and course completion are kept in the learner's local progress store.
+
+The built-in tutor interprets physical QWERTY key positions. It shows the raw key sequence and a Unicode preview for Hindi; learners can also choose **System Unicode input** if they already have a working Hindi keyboard on the device. This second mode supports mobile input methods and uncommon signs. The keyboard graphic highlights the lesson's focus keys. It is a reference, not an operating-system keyboard installer.
+
+The InScript mapping follows the open [m17n Hindi InScript table](https://github.com/mike-fabian/m17n-db/blob/master/MIM/hi-inscript.mim). The Unicode Remington GAIL mapping follows the open [m17n Hindi Remington table](https://github.com/mike-fabian/m17n-db/blob/master/MIM/hi-remington.mim). The KrutiDev tutor implements common KrutiDev 010 physical key sequences and visual-order short-`i` conversion to Unicode, checked against the [published KrutiDev conversion source](https://github.com/sanskrit-coders/tech_hindi_font_converters/blob/master/Krutidev10%20to%20Uniode%20to%20Kritidev10%20Converter_V24.html). This is a training preview, not a byte-for-byte KrutiDev document converter or a licensed copy of the legacy font. Uncommon marks can be entered through the supplemental on-screen keys or System Unicode input.
+
+Keyboard implementations and exam layouts vary across operating systems. Validate the required layout against the current exam notice and use that layout for an official test. WPM in the tutor is a five-character measure, not an official Hindi APM score.
